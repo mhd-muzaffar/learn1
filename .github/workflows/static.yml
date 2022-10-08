@@ -5,6 +5,16 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
+     - name: Setup PyPy and check latest
+        uses: ./
+        with:
+          python-version: 'pypy-3.7-v7.3.x'
+          check-latest: true
+      - name: PyPy and Python version
+        run: python --version
+
+      - name: Run simple code
+        run: python -c 'import math; print(math.factorial(5))'
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
