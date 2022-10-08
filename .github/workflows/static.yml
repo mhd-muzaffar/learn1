@@ -5,7 +5,7 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-     - name: Setup PyPy and check latest
+      - name: Setup PyPy and check latest
         uses: ./
         with:
           python-version: 'pypy-3.7-v7.3.x'
